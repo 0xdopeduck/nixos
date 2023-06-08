@@ -19,6 +19,9 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
 
+  # Configuring Nix package manager
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
@@ -32,32 +35,32 @@
 
   # Enable the X11 windowing system.
   services.xserver = {
-        enable = true;
-        layout = "us";
+	enable = true;
+  	layout = "us";
 
-        # services.xserver.xkbOptions = {
-        #   "eurosign:e";
-        #   "caps:escape" # map caps to escape.
-        # };
+  	# services.xserver.xkbOptions = {
+  	#   "eurosign:e";
+  	#   "caps:escape" # map caps to escape.
+  	# };
 
-        desktopManager = {
-             xterm.enable = false;
-        };
+   	desktopManager = {
+   	     xterm.enable = false;
+   	};
 
-        displayManager = {
-             defaultSession = "none+i3";
-        };
+   	displayManager = {
+   	     defaultSession = "none+i3";
+   	};
 
-        windowManager.i3 = {
-             package = pkgs.i3-gaps;
-             enable = true;
-             extraPackages = with pkgs; [
-                dmenu
-                i3status
-                i3lock
-                i3blocks
-             ];
-        };
+   	windowManager.i3 = {
+   	     package = pkgs.i3-gaps;
+   	     enable = true;
+   	     extraPackages = with pkgs; [
+   	     	dmenu
+   	     	i3status
+   	     	i3lock
+   	     	i3blocks
+   	     ];
+   	};
   };
 
 
@@ -71,9 +74,9 @@
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
   services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        pulse.enable = true;
+	enable = true;
+	alsa.enable = true;
+	pulse.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -87,7 +90,7 @@
      packages = with pkgs; [
        firefox
        alacritty
-       starship
+       arandr
        mpv
        dracula-theme
        flameshot
@@ -95,10 +98,13 @@
        xfce.thunar-volman
        xfce.thunar-archive-plugin
        lxappearance
-        rofi
-        feh
-        picom
-        autocutsel
+	     rofi
+	     feh
+	     picom
+	     autocutsel
+       discord
+       networkmanagerapplet
+       brave
      ];
    };
 
@@ -108,10 +114,10 @@
   nix.settings.auto-optimise-store = true;
 
 #  nix.gc = {
-#       automatic = true;
-#       date = "weekly";
-#       options = "--delete-older-than 30d";
-#       };
+#  	automatic = true;
+#	date = "weekly";
+#	options = "--delete-older-than 30d";
+#	};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -125,15 +131,16 @@
      lf
      ranger
      fzf
+     starship
      zsh
    ];
 
    fonts.fonts = with pkgs; [
-        noto-fonts
-        noto-fonts-emoji
-        proggyfonts
-        liberation_ttf
-        jetbrains-mono
+	noto-fonts
+	noto-fonts-emoji
+	proggyfonts
+	liberation_ttf
+	jetbrains-mono
    ];
 
 

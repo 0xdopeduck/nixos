@@ -14,6 +14,21 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
+  services.asusd = {
+  	enable = true;
+	};
+
+  # Optionally, you may need to select the appropriate driver version for your specific GPU.
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+  # nvidia-drm.modeset=1 is required for some wayland compositors, e.g. sway
+  hardware.nvidia.modesetting.enable = true;
+
   networking.hostName = "mainframe";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -21,6 +36,7 @@
 
   # Configuring Nix package manager
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -36,7 +52,16 @@
   # Enable the X11 windowing system.
   services.xserver = {
 	enable = true;
+	videoDrivers = [ "nvidia" "amdgpu" ];
   	layout = "us";
+	
+	libinput = {
+		enable = true;
+		touchpad = {
+		naturalScrolling = false;
+		tapping = true;
+		};
+	};
 
   	# services.xserver.xkbOptions = {
   	#   "eurosign:e";
@@ -68,7 +93,7 @@
   environment.pathsToLink = [ "/libexec" ];
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
 
   # Enable sound.
   # sound.enable = true;
@@ -79,8 +104,6 @@
 	pulse.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.oxdopeduck = {
@@ -93,18 +116,20 @@
        arandr
        mpv
        dracula-theme
+       dracual-icon-theme
        flameshot
        xfce.thunar
        xfce.thunar-volman
        xfce.thunar-archive-plugin
        lxappearance
-	     rofi
-	     feh
-	     picom
-	     autocutsel
+       rofi
+       feh
+       picom
+       autocutsel
        discord
        networkmanagerapplet
        brave
+       obsidian
      ];
    };
 
@@ -113,11 +138,6 @@
   # Configuring Nix Package Manager
   nix.settings.auto-optimise-store = true;
 
-#  nix.gc = {
-#  	automatic = true;
-#	date = "weekly";
-#	options = "--delete-older-than 30d";
-#	};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -133,6 +153,7 @@
      fzf
      starship
      zsh
+     asusctl
    ];
 
    fonts.fonts = with pkgs; [
@@ -147,9 +168,12 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+  programs = {
+  	gnupg.agent = {
+    		enable = true;
+    		enableSSHSupport = true;
+		};
+	zsh.enable = true;
   };
 
   # List services that you want to enable:

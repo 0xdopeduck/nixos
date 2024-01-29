@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [
+	./programs
+	./modules
+  ];
 
   home.username = lib.mkDefault "oxdopeduck";
   home.homeDirectory = "/home/${config.home.username}";
@@ -31,10 +35,13 @@
 	##gcc
 
 	binutils
-	#openvpn
+	openvpn
 	openssh
+	neovim
+	xclip
 
 	fzf
+	fd
 	htop
 	tmux
 	git
@@ -46,12 +53,14 @@
 	less
 	lsd
 	stow
+	starship
 
   ];
 
+
   home.sessionVariables = {
     EDITOR = "nvim";
-    SHELL = "\${pkg.zsh}/bin/zsh";
+    SHELL = "${pkgs.zsh}/bin/zsh";
     LANG = "en_US.UTF-8";
   };
 
@@ -68,6 +77,9 @@
 	nin = "nix-env -iA ";
 	nsearch = "nix-env -qaPbs";
 	nremove = "nix-env --uninstall ";
+
+	#general
+	ls = "lsd -1";
 
   };
 

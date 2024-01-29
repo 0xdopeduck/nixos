@@ -6,7 +6,7 @@
 	programs.zsh.enableAutosuggestions = true;
 	programs.zsh.autocd = true;
 	programs.zsh.history.share = true;
-	programs.zsh.history.size = "1000";
+	programs.zsh.history.size = 1000;
 	programs.zsh.enableCompletion = true;
 	programs.zsh.dirHashes = {
 		

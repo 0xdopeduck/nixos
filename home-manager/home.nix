@@ -3,7 +3,6 @@
 {
 	imports = [
 		./common.nix
-		./modules/cybersec.nix
 	];
 
 }

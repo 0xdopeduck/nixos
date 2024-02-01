@@ -3,5 +3,6 @@
 {
 	imports = [
 		./cybersec.nix
+		./desktop.nix
 	];
 }

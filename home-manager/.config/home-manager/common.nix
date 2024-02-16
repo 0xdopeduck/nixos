@@ -34,6 +34,8 @@
 	pipx
 	##gcc
 
+     	(pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+
 	binutils
 	openvpn
 	openssh
@@ -44,9 +46,12 @@
 	fd
 	htop
 	tmux
+	zellij
+	yazi
 	git
 	ripgrep
 	ranger
+	flameshot
 	gnugrep
 	gawk
 	gnused
@@ -77,9 +82,10 @@
 	nin = "nix-env -iA ";
 	nsearch = "nix-env -qaPbs";
 	nremove = "nix-env --uninstall ";
+	hms = "home-manager switch";
 
 	#general
-	ls = "lsd -1";
+	ls = "lsd --icon-theme unicode -1";
 
   };
 

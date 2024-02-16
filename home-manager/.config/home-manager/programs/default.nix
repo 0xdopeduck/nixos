@@ -6,5 +6,6 @@
 		./tmux.nix
 		./starship.nix
 		./zsh.nix
+		#./alacritty.nix
 	];
 }

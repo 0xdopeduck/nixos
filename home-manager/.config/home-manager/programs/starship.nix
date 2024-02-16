@@ -5,7 +5,7 @@
 	programs.starship.enableZshIntegration = true;
 	programs.starship.settings = {
 
-		format = lib.concatStrings ["[┌─<<](bold fg:33)" "$username" "@" "$hostname" "[>>](bold fg:33) " "$status" "$directory" " $git_branch" " $git_status" " $nix_shell" "\n" "[└─](bold fg:33)" "$character" ];
+		format = lib.concatStrings ["[┌─<<](bold fg:33)" "$username" "@" "$hostname" "[>>](bold fg:33) " "$status" "$directory" " $git_branch" " $git_status" " $nix_shell" "$python" "\n" "[└─](bold fg:33)" "$character" ];
 
 		scan_timeout = 10;
 		add_newline = false;

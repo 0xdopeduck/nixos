@@ -62,6 +62,7 @@
 
   ];
 
+  fonts.fontconfig.enable = true;
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -85,7 +86,7 @@
 	hms = "home-manager switch";
 
 	#general
-	ls = "lsd --icon-theme unicode -1";
+	ls = "lsd -1";
 
   };
 

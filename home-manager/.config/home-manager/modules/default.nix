@@ -2,7 +2,7 @@
 
 {
 	imports = [
-		#./cybersec.nix
+		./cybersec.nix
 		#./desktop.nix
 	];
 }

@@ -5,19 +5,19 @@
 		enable = true;
 		settings = {
 			font = {
-				normal.family = "JetBrainsMono";
-				bold.family = "JetBrainsMono";
+				normal.family = "JetBrainsMono Nerd Font";
+				bold.family = "JetBrainsMono Nerd Font";
 				italic = {
-					family = "JetBrainsMono";
+					family = "JetBrainsMono Nerd Font";
 					style = "Italic";
 					};
 				bold_italic = {
-					family = "JetBrainsMono";
+					family = "JetBrainsMono Nerd Font";
 					style = "Bold Italic";
 					};
-				size = 20;
+				size = 15;
 			};
-			window.opacity = 0.7;
+			window.opacity = 0.5;
 			cursor.style = { 
 				shape = "Block"; 
 				blinking = "Always";

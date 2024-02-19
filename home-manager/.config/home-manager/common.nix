@@ -59,6 +59,7 @@
 	lsd
 	stow
 	starship
+	rofi
 
   ];
 
@@ -86,7 +87,8 @@
 	hms = "home-manager switch";
 
 	#general
-	ls = "lsd -1";
+	ls = "lsd -a -1";
+	rr = "yazi";
 
   };
 

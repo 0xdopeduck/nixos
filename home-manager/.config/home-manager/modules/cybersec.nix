@@ -44,7 +44,7 @@
   ];
 
   home.file = {
-  	"wordlist/seclists".source = "${pkgs.seclists}/share/wordlists/seclists";
+  	"wordlists/seclists".source = "${pkgs.seclists}/share/wordlists/seclists";
 	".commands.txt" = { text = ''
 nmap -A -T4 -v -p		#Top 1000 ports TCP All scan
 nmap -T4 -v -p-			#All ports TCP open port scan

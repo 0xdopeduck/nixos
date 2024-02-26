@@ -60,6 +60,8 @@
 	stow
 	starship
 	rofi
+	zoxide
+	eza
 
   ];
 

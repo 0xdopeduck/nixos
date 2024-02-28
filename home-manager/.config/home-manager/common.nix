@@ -61,7 +61,6 @@
 	starship
 	rofi
 	zoxide
-	eza
 
   ];
 

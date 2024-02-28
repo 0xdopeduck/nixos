@@ -7,6 +7,7 @@
 		./starship.nix
 		./zsh.nix
 		./yazi.nix
+		./git.nix
 		./commands.nix
 		./zoxide.nix
 		#./alacritty.nix

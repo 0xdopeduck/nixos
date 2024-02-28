@@ -8,6 +8,7 @@
 		./zsh.nix
 		./yazi.nix
 		./commands.nix
+		./zoxide.nix
 		#./alacritty.nix
 	];
 }

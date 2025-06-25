@@ -15,9 +15,13 @@
     steam-run
     mangohud
     protonup-qt
+    heroic
   ];
 
   programs.gamemode.enable = true;
+  programs.gamemode.settings.general.inhibit_screensaver = 0;
+  users.users.oxdopeduck.extraGroups = [ "gamemode" ];
+
   programs.steam.gamescopeSession.enable = true;
   programs.steam = {
     enable = true;

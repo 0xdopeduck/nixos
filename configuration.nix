@@ -16,7 +16,10 @@
       ./modules/games.nix
       ./modules/nixos.nix
       ./modules/sec-tools.nix
-      # ./modules/android.nix
+      ./modules/android.nix
+      ./modules/amd_pstate.nix
+      ./modules/amd_zenpower.nix
+      ./modules/ssd.nix
       ./hosts/asus.nix
       ./hardware-configuration.nix
     ];
@@ -26,7 +29,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

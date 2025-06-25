@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 
 {
+
   users.users.oxdopeduck = {
     extraGroups = [ "adbuser" ];
   };
@@ -18,15 +19,13 @@
   # Enable adb daemon service
   programs.adb.enable = true;                   
 
+  # nixpkgs.config.android_sdk.accept_license = true;
+
   environment.systemPackages = with pkgs; [
 
    # Tools and Packages
-   androidenv.test-suite
-   androidenv.androidPkgs.tools
-   androidenv.androidPkgs.platform-tools
-   androidenv.androidPkgs.emulator
-   androidenv.androidPkgs.ndk-bundle
-
+   android-studio
+   android-tools
 
   ];
 

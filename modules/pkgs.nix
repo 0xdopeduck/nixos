@@ -22,23 +22,29 @@
    ## Editor
    neovim 
    vscode
-   code-cursor
+   # code-cursor
+   binutils
 
    ## Version-Control
    git
 
    ## Compiler
-   libgcc
-   libgccjit
-   gnumake
+   gcc
    go
+   gopls
    python3Full
+   glibc
+   gnumake   # Often required for build scripts
+
+   # kubernetes
+   kubectl
+   kind
 
    ## Support tools
    ripgrep
    fd
    fzf
-   virtualenv
+   # virtualenv
    pipx
 
    ## Cloud
@@ -47,7 +53,7 @@
    azure-cli
 
    ## NPM Manager
-   fnm
+   nodejs_24
 
    # Browsers
    brave
@@ -78,6 +84,11 @@
    # Social
    discord
 
+   # Note-taking
+   obsidian
+
+   # Office
+   libreoffice-still
 
   ];
 

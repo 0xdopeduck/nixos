@@ -9,38 +9,42 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  programs.java = {
+      enable = true;
+      package = pkgs.jdk17; # Or a newer version like pkgs.jdk17
+    };
+
+
   environment.systemPackages = with pkgs; [
-   # GUI tools
-   burpsuite
-   jadx
-   jdk17         
-   dnsrecon         
-   massdns
-   bind             
-   nmap             
-   rustscan         
-   uncover          
-   gau              
-   sqlmap           
-   ghauri           
-   subfinder        
-   assetfinder      
-   theharvester     
-   massdns          
-   gobuster         
-   ffuf             
-   httpx            
-   pacu             
-   frida-tools      
-   trufflehog
-   s3scanner
-   gowitness
+   
    amass
-   zgrab2
-   massdns
-   jq
    assetfinder
-   amass
+   bind
+   burpsuite
+   dig
+   dnsrecon
+   ffuf
+   findomain
+   frida-tools
+   gau
+   ghauri
+   gobuster
+   gowitness
+   httpx
+   jadx
+   jq
+   massdns
+   nmap
+   pacu
+   rustscan
+   s3scanner
+   sqlmap
+   subfinder
+   theharvester
+   trufflehog
+   uncover
+   zgrab2
+
   ];
 
 }

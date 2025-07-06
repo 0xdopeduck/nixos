@@ -9,12 +9,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.java = {
-      enable = true;
-      package = pkgs.jdk17; # Or a newer version like pkgs.jdk17
-    };
-
-
   environment.systemPackages = with pkgs; [
    
    amass

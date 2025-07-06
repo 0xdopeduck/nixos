@@ -20,8 +20,10 @@
       ./modules/amd_pstate.nix
       ./modules/amd_zenpower.nix
       ./modules/ssd.nix
+      ./modules/swap.nix
       ./hosts/asus.nix
       ./hardware-configuration.nix
+      ./cachix.nix
     ];
 
   # Bootloader.

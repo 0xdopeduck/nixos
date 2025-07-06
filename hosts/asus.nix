@@ -33,11 +33,11 @@
 	"iTCO_wdt" 
 	"sp5100_tco"
  	"nouveau" 
-	"nvidia"
-	"nvidia_drm"
-	"nvidia_modeset"
-	"nvidia_uvm"
   ];
+	# "nvidia"
+	# "nvidia_drm"
+	# "nvidia_modeset"
+	# "nvidia_uvm"
 
   # boot.kernelParams = [ "amdgpu.dc=0" ];
   # boot.kernelParams = [ "mitigations=off" "quiet" "nvidia-drm.modeset=1" ];

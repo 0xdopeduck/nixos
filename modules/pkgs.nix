@@ -22,7 +22,7 @@
    ## Editor
    neovim 
    vscode
-   # code-cursor
+   code-cursor
    binutils
 
    ## Version-Control
@@ -38,6 +38,8 @@
 
    # kubernetes
    kubectl
+   cri-tools
+   etcd
    kind
 
    ## Support tools
@@ -66,6 +68,7 @@
    # Misc
    wget
    curl
+   xclip
    unzip
    gzip
    starship
@@ -89,6 +92,12 @@
 
    # Office
    libreoffice-still
+
+   # NixOS
+   appimage-run
+   cachix
+
+
 
   ];
 

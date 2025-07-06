@@ -13,7 +13,34 @@
    # GUI tools
    burpsuite
    jadx
-
+   jdk17         
+   dnsrecon         
+   massdns
+   bind             
+   nmap             
+   rustscan         
+   uncover          
+   gau              
+   sqlmap           
+   ghauri           
+   subfinder        
+   assetfinder      
+   theharvester     
+   massdns          
+   gobuster         
+   ffuf             
+   httpx            
+   pacu             
+   frida-tools      
+   trufflehog
+   s3scanner
+   gowitness
+   amass
+   zgrab2
+   massdns
+   jq
+   assetfinder
+   amass
   ];
 
 }

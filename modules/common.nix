@@ -50,4 +50,10 @@
   };
 
 
+  nix.settings = {
+    max-jobs = 4;     # run at most 2 builds at the same time
+    cores    = 6;     # pass “-j2” to make & friends
+  };
+
+
 }

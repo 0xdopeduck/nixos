@@ -15,8 +15,11 @@
     brightnessctl
     grimblast
     wl-clipboard
-    thunar
-    nwg-display
+    xfce.thunar
+    xfce.thunar-volman
+    xfce.thunar-vcs-plugin
+    xfce.thunar-archive-plugin
+    nwg-displays
   ];
 
   # Enable Hyprland

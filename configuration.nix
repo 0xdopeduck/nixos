@@ -9,7 +9,8 @@
     [ 
       ./modules/common.nix
       # ./modules/gnome.nix
-      ./modules/hyprland.nix
+      ./modules/kde.nix
+      # ./modules/hyprland.nix
       ./modules/pkgs.nix
       ./modules/virtualisation.nix
       ./modules/network.nix

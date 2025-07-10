@@ -18,7 +18,7 @@
    dig
    dnsrecon
    ffuf
-   findomain
+   # findomain
    frida-tools
    gau
    ghauri

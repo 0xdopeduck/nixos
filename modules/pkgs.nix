@@ -97,7 +97,8 @@
    appimage-run
    cachix
 
-
+   #Integration
+   deskflow
 
   ];
 

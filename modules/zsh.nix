@@ -24,29 +24,16 @@
     #   "beep"
     # ];
 
-    shellInit = ''
-	export FZF_DEFAULT_COMMAND='fd -L -H -t d -t l'
-	export FZF_DEFAULT_OPTS="--height 60%  --border"
-	export FZF_CTRL_R_OPTS="
-	  --preview 'echo {}' --preview-window up:3:hidden:wrap
-	  --bind 'ctrl-/:toggle-preview'
-	  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-	  --color header:italic
-	  --header 'Press CTRL-Y to copy command into clipboard'"
-	export FZF_CTRL_T_OPTS="
-	  --preview 'bat -n --color=always {}'
-	  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-	export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
-    '';
+    shellInit = "";
 
-    loginShellInit = ''
-        # Shell config
-	source $HOME/.zshenv
-    '';
+	#    loginShellInit = ''
+	#        # Shell config
+	# source $HOME/.zshenv
+	#    '';
+    loginShellInit = ""; 
 
     interactiveShellInit = ''
       # Source custom files
-      source $HOME/.zshenv
       if command -v kubectl >/dev/null 2>&1; then
         mkdir -p "$HOME/.config/zsh"
         if [ ! -f "$HOME/.config/zsh/kube_completion.zsh" ]; then
@@ -67,6 +54,18 @@
         fi
       fi
 
+	export FZF_DEFAULT_COMMAND='fd -L -H -t d -t l'
+	export FZF_DEFAULT_OPTS="--height 60%  --border"
+	export FZF_CTRL_R_OPTS="
+	  --preview 'echo {}' --preview-window up:3:hidden:wrap
+	  --bind 'ctrl-/:toggle-preview'
+	  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+	  --color header:italic
+	  --header 'Press CTRL-Y to copy command into clipboard'"
+	export FZF_CTRL_T_OPTS="
+	  --preview 'bat -n --color=always {}'
+	  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+	export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
     '';
 
 
@@ -75,16 +74,33 @@
             autoload -U promptinit && promptinit && prompt pure
           fi
         '';
+    
+     shellAliases = {
+	ls = "lsd";
+	nin = "nix-env -iA";
+	rebuild = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
+	cat = "bat";
+	tmux = "tmux -2u";
+	};
   };
 
   # Set Zsh as the default shell for a user (replace 'yourusername' with actual username)
   programs.zoxide = {
 	enable = true;
 	enableZshIntegration = true;
+	flags = [
+		"--cmd cd"
+	];
   };
 
   users.users.oxdopeduck = {
     shell = pkgs.zsh;
   };
+
+  # system.userActivationScripts.cleanZshEnv = ''
+  #   if [ -f ~oxdopeduck/.zshenv ]; then
+  #     rm ~oxdopeduck/.zshenv
+  #   fi
+  # '';
 }
 

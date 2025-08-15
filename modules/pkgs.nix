@@ -77,6 +77,7 @@
    lf
    lsd
    openssl
+   bat
 
    # Terminal
    ghostty

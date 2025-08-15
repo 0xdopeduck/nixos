@@ -14,7 +14,7 @@
 
   programs.java = {
     enable = true;
-    package = pkgs.jdk17; # Or a newer version like pkgs.jdk17
+    package = pkgs.jdk24; # Or a newer version like pkgs.jdk17
   };
 
   environment.systemPackages = with pkgs; [
@@ -76,9 +76,11 @@
    ranger
    lf
    lsd
+   openssl
 
    # Terminal
    ghostty
+   tmux
 
    # Fonts
    nerd-fonts.fantasque-sans-mono
@@ -86,6 +88,7 @@
 
    # Social
    discord
+   telegram-desktop
 
    # Note-taking
    obsidian
@@ -96,9 +99,6 @@
    # NixOS
    appimage-run
    cachix
-
-   #Integration
-   deskflow
 
   ];
 

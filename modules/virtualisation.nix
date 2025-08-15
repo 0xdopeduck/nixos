@@ -6,11 +6,18 @@
 
 {
 
-  users.users.oxdopeduck = {
-    extraGroups = [ "libvirt" "kvm" ];
-  };
   # Start libvirtd service
   virtualisation.libvirtd.enable = true;          
+
+  users.users.oxdopeduck = {
+    extraGroups = [ "libvirt" "kvm" "libvirtd" ];
+  };
+
+	environment.systemPackages = [
+	  pkgs.spice-vdagent
+	  pkgs.virglrenderer
+	];
+
 
   # Install and enable virt-manager
   programs.virt-manager.enable = true;            

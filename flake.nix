@@ -8,15 +8,23 @@
     #   url = "github:nix-community/home-manager";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     # use "nixos", or your hostname as the name of the configuration
     # it's a better practice than "default" shown in the video
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
+	# home-manager.nixosModules.home-manager  # <- important to import here
+	#        {
+	#          home-manager.useGlobalPkgs = true;
+	#          home-manager.useUserPackages = true;
+	#   home-manager.backupFileExtension = "backup";
+	#          home-manager.users.oxdopeduck = import ./home.nix;
+	#        }
         # inputs.home-manager.nixosModules.default
       ];
     };

@@ -21,6 +21,9 @@
       ./modules/amd_zenpower.nix
       ./modules/ssd.nix
       ./modules/swap.nix
+      ./modules/zsh.nix
+      ./modules/ghostty.nix
+      ./modules/tmux.nix
       ./hosts/asus.nix
       ./hardware-configuration.nix
       ./cachix.nix

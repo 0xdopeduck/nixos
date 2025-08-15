@@ -14,15 +14,15 @@
 
     histFile = "$HOME/.zsh_history";
     histSize = 1000;
-    saveHist = 1000;
+    # saveHist = 1000;
 
     setOptions = [
       "vi"
     ];
 
-    unsetOptions = [
-      "beep"
-    ];
+    # unsetOptions = [
+    #   "beep"
+    # ];
 
     shellInit = ''
 	export FZF_DEFAULT_COMMAND='fd -L -H -t d -t l'
@@ -37,7 +37,7 @@
 	  --preview 'bat -n --color=always {}'
 	  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 	export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
-    '',
+    '';
 
     loginShellInit = ''
         # Shell config
@@ -47,11 +47,26 @@
     interactiveShellInit = ''
       # Source custom files
       source $HOME/.zshenv
-      source $HOME/.config/zsh/kube_completion.zsh
+      if command -v kubectl >/dev/null 2>&1; then
+        mkdir -p "$HOME/.config/zsh"
+        if [ ! -f "$HOME/.config/zsh/kube_completion.zsh" ]; then
+          kubectl completion zsh > "$HOME/.config/zsh/kube_completion.zsh"
+        fi
+        source "$HOME/.config/zsh/kube_completion.zsh"
+      fi
 
       fpath+=("${pkgs.pure-prompt}/share/zsh/site-functions")
 
-      eval "$(fzf --zsh)"
+      if command -v fzf >/dev/null 2>&1; then
+        # Source FZF completion and key bindings if available
+        if [ -f "${pkgs.fzf}/share/fzf/completion.zsh" ]; then
+          source "${pkgs.fzf}/share/fzf/completion.zsh"
+        fi
+        if [ -f "${pkgs.fzf}/share/fzf/key-bindings.zsh" ]; then
+          source "${pkgs.fzf}/share/fzf/key-bindings.zsh"
+        fi
+      fi
+
     '';
 
 
@@ -66,7 +81,7 @@
   programs.zoxide = {
 	enable = true;
 	enableZshIntegration = true;
-  }
+  };
 
   users.users.oxdopeduck = {
     shell = pkgs.zsh;

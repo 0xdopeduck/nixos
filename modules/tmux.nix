@@ -5,9 +5,6 @@
   programs.tmux = {
     enable = true;
     
-    # Mouse support
-    mouse = true;
-    
     # Base index configuration
     baseIndex = 1;
     
@@ -23,11 +20,19 @@
     # Prefix key configuration (C-Space instead of C-b)
     shortcut = "Space";
     
-    # Disable bell
-    disableConfirmationPrompt = true;
-    
     # Additional configuration
     extraConfig = ''
+      # Enable mouse
+      set -g mouse on
+
+
+      # loud or quiet?
+      set -g visual-activity off
+      set -g visual-bell off
+      set -g visual-silence off
+      set-window-option -g monitor-activity off
+      set -g bell-action none
+
       # Set window and pane base index to 1
       set-window-option -g pane-base-index 1
       

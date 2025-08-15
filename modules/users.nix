@@ -12,7 +12,6 @@
     extraGroups = [ "networkmanager" "wheel" "libvirt" "kvm" "adbusers" ];
     initialPassword = "changeme";
     createHome = true;
-    shell = pkgs.zsh;
     useDefaultShell = true;
     packages = with pkgs; [
     #  thunderbird

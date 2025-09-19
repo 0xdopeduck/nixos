@@ -15,7 +15,7 @@ in
     ""
     "## Theme Settings"
     # Use a single theme; to use light/dark variants, uncomment below
-    "theme = \"tokyonight\""
+    "theme = TokyoNight Night"
     # "theme = \"light:tokyonight-day,dark:tokyonight\""
     ""
     "## Font Settings"

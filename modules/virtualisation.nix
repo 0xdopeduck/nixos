@@ -7,10 +7,14 @@
 {
 
   # Start libvirtd service
-  virtualisation.libvirtd.enable = true;          
+  virtualisation.libvirtd = {
+	enable = true;
+	qemu.ovmf.enable = true;
+	qemu.swtpm.enable = true;
+  };
 
   users.users.oxdopeduck = {
-    extraGroups = [ "libvirt" "kvm" "libvirtd" ];
+    extraGroups = [ "libvirt" "kvm" "libvirtd" "render" ];
   };
 
 	environment.systemPackages = [
@@ -26,5 +30,6 @@
   virtualisation.docker.enable = true;          
   virtualisation.docker.rootless.enable = true; 
   users.extraGroups.docker.members = [ "oxdopeduck" ];
+
 
 }

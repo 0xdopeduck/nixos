@@ -32,7 +32,7 @@
    gcc
    go
    gopls
-   python3Full
+   python3
    glibc
    gnumake   # Often required for build scripts
 

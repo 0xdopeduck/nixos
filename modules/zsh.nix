@@ -81,6 +81,7 @@
 	rebuild = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
 	cat = "bat";
 	tmux = "tmux -2u";
+	tf = "terraform";
 	};
   };
 
@@ -97,6 +98,10 @@
     shell = pkgs.zsh;
   };
 
+  initExtra = ''
+      autoload -U +X bashcompinit && bashcompinit
+      complete -o nospace -C ${pkgs.terraform}/bin/terraform terraform
+    '';
   # system.userActivationScripts.cleanZshEnv = ''
   #   if [ -f ~oxdopeduck/.zshenv ]; then
   #     rm ~oxdopeduck/.zshenv

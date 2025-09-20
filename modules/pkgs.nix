@@ -53,6 +53,7 @@
    awscli2
    google-cloud-sdk
    azure-cli
+   terraform
 
    ## NPM Manager
    nodejs_24
@@ -78,6 +79,10 @@
    lsd
    openssl
    bat
+   htop
+   jless
+   mission-center
+   stow
 
    # Terminal
    ghostty
@@ -100,6 +105,7 @@
    # NixOS
    appimage-run
    cachix
+   appimage-run
 
   ];
 

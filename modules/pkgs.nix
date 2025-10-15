@@ -55,6 +55,9 @@
    azure-cli
    terraform
 
+   #Music
+   spotify
+
    ## NPM Manager
    nodejs_24
 

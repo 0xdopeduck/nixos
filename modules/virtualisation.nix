@@ -9,8 +9,8 @@
   # Start libvirtd service
   virtualisation.libvirtd = {
 	enable = true;
-	qemu.ovmf.enable = true;
-	qemu.swtpm.enable = true;
+	# qemu.ovmf.enable = true;
+	# qemu.swtpm.enable = true;
   };
 
   users.users.oxdopeduck = {

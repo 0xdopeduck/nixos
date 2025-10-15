@@ -66,6 +66,9 @@
 	  --preview 'bat -n --color=always {}'
 	  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 	export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
+	
+        autoload -U +X bashcompinit && bashcompinit
+        complete -o nospace -C ${pkgs.terraform}/bin/terraform terraform
     '';
 
 
@@ -98,10 +101,6 @@
     shell = pkgs.zsh;
   };
 
-  initExtra = ''
-      autoload -U +X bashcompinit && bashcompinit
-      complete -o nospace -C ${pkgs.terraform}/bin/terraform terraform
-    '';
   # system.userActivationScripts.cleanZshEnv = ''
   #   if [ -f ~oxdopeduck/.zshenv ]; then
   #     rm ~oxdopeduck/.zshenv

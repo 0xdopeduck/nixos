@@ -14,7 +14,7 @@
 
   programs.java = {
     enable = true;
-    package = pkgs.jdk24; # Or a newer version like pkgs.jdk17
+    package = pkgs.jdk25; # Or a newer version like pkgs.jdk17
   };
 
   environment.systemPackages = with pkgs; [

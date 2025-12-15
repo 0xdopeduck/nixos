@@ -83,8 +83,10 @@
 	nin = "nix-env -iA";
 	rebuild = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
 	cat = "bat";
+	kubectl = "k";
 	tmux = "tmux -2u";
 	tf = "terraform";
+	ngc = "sudo nix-collect-garbage --delete-old";
 	};
   };
 

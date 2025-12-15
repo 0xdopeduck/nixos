@@ -24,6 +24,7 @@
    vscode
    code-cursor
    binutils
+   zed-editor
 
    ## Version-Control
    git
@@ -109,6 +110,11 @@
    appimage-run
    cachix
    appimage-run
+
+   #security
+   caido
+   jadx
+   frida-tools
 
   ];
 

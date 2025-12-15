@@ -14,7 +14,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable ADB udev rules
-  services.udev.packages = [ pkgs.android-udev-rules ];
+  # services.udev.packages = [ pkgs.android-udev-rules ];
 
   # Enable adb daemon service
   programs.adb.enable = true;                   

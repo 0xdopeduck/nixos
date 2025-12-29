@@ -61,7 +61,8 @@
 
   services.blueman.enable = true;
 
-  programs.ssh.startAgent = true;
+  services.gnome.gnome-keyring.enable = true;
+
 
   # This ensures that screensharing, file pickes, Flatpak does not break
   xdg.portal = {

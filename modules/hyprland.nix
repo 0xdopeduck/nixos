@@ -50,6 +50,8 @@
 
   services.blueman.enable = true;
 
+  programs.ssh.startAgent = true;
+
   # This ensures that screensharing, file pickes, Flatpak does not break
   xdg.portal = {
     enable = true;

@@ -49,11 +49,6 @@
     blueman
   ];
 
-  environment.variables = {
-    XCURSOR_THEME = "Bibata-Modern-Ice";
-    XCURSOR_SIZE = "24";
-  };
-
   hardware.bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -61,8 +56,7 @@
 
   services.blueman.enable = true;
 
-  services.gnome.gnome-keyring.enable = true;
-
+  programs.ssh.startAgent = true;
 
   # This ensures that screensharing, file pickes, Flatpak does not break
   xdg.portal = {

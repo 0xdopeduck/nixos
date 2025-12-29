@@ -19,23 +19,34 @@
 
   environment.systemPackages = with pkgs; [
    # Programming
+
    ## Editor
+   ### TUI
    neovim 
+   tree-sitter
+   ### GUI
    vscode
-   code-cursor
-   binutils
    zed-editor
+   ## AI
+   code-cursor
 
    ## Version-Control
    git
+   lazygit
 
-   ## Compiler
+   ## Compiler & language server
    gcc
    go
    gopls
+   nil
+   rust-analyzer
+   clang-tools
+   yaml-language-server
+   marksman
    python3
    glibc
-   gnumake   # Often required for build scripts
+   gnumake   
+   binutils
 
    # kubernetes
    kubectl
@@ -55,9 +66,6 @@
    google-cloud-sdk
    azure-cli
    terraform
-
-   #Music
-   spotify
 
    ## NPM Manager
    nodejs_24
@@ -87,21 +95,15 @@
    jless
    mission-center
    stow
+   zathura
+   imagemagick_light
 
    # Terminal
    ghostty
    tmux
 
-   # Fonts
-   nerd-fonts.fantasque-sans-mono
-   nerd-fonts.jetbrains-mono
-
    # Social
    discord
-   telegram-desktop
-
-   # Note-taking
-   obsidian
 
    # Office
    libreoffice-still
@@ -111,12 +113,9 @@
    cachix
    appimage-run
 
-   #security
-   caido
-   jadx
-   frida-tools
+   #privacy
+   bitwarden-desktop
 
   ];
-
 
 }

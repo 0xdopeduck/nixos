@@ -40,7 +40,7 @@
     wlogout
     pavucontrol
     blueman
-    kdePackages.qtmultimedia
+    qt6Packages.qtmultimedia
   ];
 
   hardware.bluetooth = {

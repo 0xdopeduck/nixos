@@ -10,16 +10,20 @@
   security.polkit.enable = true;
   services.dbus.enable = true;
 
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      theme = "sddm-astronaut-theme";
+  };
 
   environment.systemPackages = with pkgs; [
-    waybar           # status bar
-    dunst            # notifications
-    rofi-wayland     # app launcher
-    grim slurp       # screenshots
-    wl-clipboard     # clipboard
-    hyprpaper        # wallpaper
+    waybar                      # status bar
+    swaynotificationcenter      # notification
+    networkmanagerapplet
+    rofi                        # app launcher
+    flameshot                  # screenshots
+    wl-clipboard                # clipboard
+    hyprpaper                   # wallpaper
     xdg-desktop-portal-hyprland
     hyprlock
     hypridle
@@ -29,8 +33,22 @@
     xfce.thunar-volman
     xfce.thunar-vcs-plugin
     xfce.thunar-archive-plugin
-
+    sddm-astronaut
+    tokyonight-gtk-theme
+    dracula-icon-theme
+    nwg-look
+    wlogout
+    pavucontrol
+    blueman
+    kdePackages.qtmultimedia
   ];
+
+  hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
 
   # This ensures that screensharing, file pickes, Flatpak does not break
   xdg.portal = {

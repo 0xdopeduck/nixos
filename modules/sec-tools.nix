@@ -14,7 +14,7 @@
    amass
    assetfinder
    bind
-   burpsuite
+   caido
    dig
    dnsrecon
    ffuf

@@ -28,7 +28,7 @@
     networkmanagerapplet
     bibata-cursors
     rofi                        # app launcher
-    flameshot                  # screenshots
+    grim slurp swappy
     wl-clipboard                # clipboard
     hyprpaper                   # wallpaper
     xdg-desktop-portal-hyprland

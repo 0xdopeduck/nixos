@@ -8,7 +8,9 @@
   imports =
     [ 
       ./modules/common.nix
-      ./modules/gnome.nix
+      # ./modules/gnome.nix
+      ./modules/font.nix
+      ./modules/hyprland.nix
       ./modules/pkgs.nix
       ./modules/virtualisation.nix
       ./modules/network.nix

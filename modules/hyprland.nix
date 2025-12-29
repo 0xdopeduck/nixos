@@ -13,6 +13,12 @@
   services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
+      extraPackages = with pkgs; [
+         qt6.qtbase
+         qt6.qtmultimedia
+         qt6.qtdeclarative
+         qt6.qtwayland
+      ];
       theme = "sddm-astronaut-theme";
   };
 
@@ -20,6 +26,7 @@
     waybar                      # status bar
     swaynotificationcenter      # notification
     networkmanagerapplet
+    bibata-cursors
     rofi                        # app launcher
     flameshot                  # screenshots
     wl-clipboard                # clipboard
@@ -40,8 +47,12 @@
     wlogout
     pavucontrol
     blueman
-    qt6Packages.qtmultimedia
   ];
+
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_SIZE = "24";
+  };
 
   hardware.bluetooth = {
       enable = true;

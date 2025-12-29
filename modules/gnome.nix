@@ -27,6 +27,11 @@
   environment.systemPackages = with pkgs; [
      gnomeExtensions.gpu-supergfxctl-switch
      gnomeExtensions.power-tracker
+     papirus-icon-theme
+     gnome-themes-extra
+     sassc
+     gtk-engine-murrine
+     refine
   ];
 
 }

@@ -27,6 +27,7 @@
     swaynotificationcenter      # notification
     networkmanagerapplet
     bibata-cursors
+    wlsunset
     rofi                        # app launcher
     grim slurp swappy
     wl-clipboard                # clipboard

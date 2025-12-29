@@ -10,7 +10,8 @@
     fontconfig.enable = true;
 
     packages = with pkgs; [
-      nerdfonts
+      nerd-fonts.fantasque-sans-mono
+      nerd-fonts.jetbrains-mono
     ];
   };
 }

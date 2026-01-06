@@ -20,7 +20,7 @@ in
     ""
     "## Font Settings"
     "font-family = \"NerdFonts Fantasque Sans Mono\""
-    "font-size = 14"
+    "font-size = 12"
     ""
     "# Optional font adjustments"
     "adjust-cell-width = 0"

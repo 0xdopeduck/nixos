@@ -13,8 +13,8 @@
 	# qemu.swtpm.enable = true;
   };
 
-#   virtualisation.waydroid.enable = true;
-#   virtualisation.waydroid.package = pkgs.waydroid-nftables;
+  # virtualisation.waydroid.enable = true;
+  # virtualisation.waydroid.package = pkgs.waydroid-nftables;
 #
 # # Kernel hardening for binder (fixes assertion fails)
 #   boot.kernelModules = [ "binder_linux" "ashmem_linux" ];

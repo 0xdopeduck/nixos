@@ -98,6 +98,9 @@
    zathura
    imagemagick_light
 
+   #Latex
+   texliveSmall
+
    # Terminal
    ghostty
    tmux

@@ -97,6 +97,10 @@
    stow
    zathura
    imagemagick_light
+   gvfs
+   polkit_gnome
+
+   mediawriter
 
    #Music
    spotify

@@ -56,6 +56,7 @@
 
 	export FZF_DEFAULT_COMMAND='fd -L -H -t d -t l'
 	export FZF_DEFAULT_OPTS="--height 60%  --border"
+    export NIXPKGS_ALLOW_UNFREE=1
 	export FZF_CTRL_R_OPTS="
 	  --preview 'echo {}' --preview-window up:3:hidden:wrap
 	  --bind 'ctrl-/:toggle-preview'

@@ -98,8 +98,12 @@
    zathura
    imagemagick_light
 
+   #Music
+   spotify
+   spicetify-cli
+
    #Latex
-   texliveSmall
+   texliveFull
 
    # Terminal
    ghostty

@@ -26,6 +26,8 @@
     waybar                      # status bar
     swaynotificationcenter      # notification
     networkmanagerapplet
+    brightnessctl
+    wev
     bibata-cursors
     wlsunset
     rofi                        # app launcher

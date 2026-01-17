@@ -7,6 +7,18 @@
 {
 
   networking.hostName = "bladerunner";
+  # networking = {
+  #   hostName = "bladerunner";
+    #networkmanager.enable = true;
+    # useDHCP = false;
+    # interfaces.wlp2s0 = {
+    #   useDHCP = true;
+    # };
+    # # defaultGateway = "192.168.1.254";
+    # nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    # #enableIPv6 = false;
+    # dhcpcd.extraConfig = "nohook resolv.conf";
+  # };
 
   # Enabling asusctl
   services.asusd = {

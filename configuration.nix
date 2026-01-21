@@ -9,15 +9,14 @@
     [ 
       ./modules/common.nix
       # ./modules/gnome.nix
-      ./modules/font.nix
       ./modules/hyprland.nix
+      ./modules/font.nix
       ./modules/pkgs.nix
       ./modules/virtualisation.nix
       ./modules/network.nix
       ./modules/users.nix
       ./modules/games.nix
       ./modules/nixos.nix
-      ./modules/sec-tools.nix
       ./modules/android.nix
       ./modules/amd_pstate.nix
       ./modules/amd_zenpower.nix

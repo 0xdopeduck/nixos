@@ -7,18 +7,17 @@
 {
 
   # Start libvirtd service
-  virtualisation.libvirtd = {
-	enable = true;
-	# qemu.ovmf.enable = true;
-	# qemu.swtpm.enable = true;
-  };
+  virtualisation = {
+      libvirtd = {
+        enable = true;
+      };
 
-  # virtualisation.waydroid.enable = true;
-  # virtualisation.waydroid.package = pkgs.waydroid-nftables;
-#
-# # Kernel hardening for binder (fixes assertion fails)
-#   boot.kernelModules = [ "binder_linux" "ashmem_linux" ];
-#   boot.kernelParams = [ "androidbinder" "androidhwbinder" "ashmem" ];  # Expose devices
+      podman = {
+        enable = true;
+        dockerCompat = true;
+      };
+    };
+
 
   users.users.oxdopeduck = {
     extraGroups = [ "libvirt" "kvm" "libvirtd" "render" ];
@@ -34,9 +33,9 @@
   programs.virt-manager.enable = true;            
 
   # Enabling docker
-  virtualisation.docker.enable = true;          
-  virtualisation.docker.rootless.enable = true; 
-  users.extraGroups.docker.members = [ "oxdopeduck" ];
+  # virtualisation.docker.enable = true;          
+  # virtualisation.docker.rootless.enable = true; 
+  # users.extraGroups.docker.members = [ "oxdopeduck" ];
 
 
 }

@@ -10,7 +10,30 @@
   nixpkgs.config.allowUnfree = true;
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+
+    policies = {
+      DisableTelemetry = true;
+      DisablePocket = true;
+
+      Preferences = {
+        # --- Telemetry ---
+        "toolkit.telemetry.enabled" = false;
+        "toolkit.telemetry.unified" = false;
+        "toolkit.telemetry.server" = "";
+
+        # --- Studies ---
+        "app.shield.optoutstudies.enabled" = false;
+
+        # --- Privacy ---
+        "privacy.trackingprotection.enabled" = true;
+        "privacy.firstparty.isolate" = true;
+
+      };
+    };
+  };
+
 
   programs.java = {
     enable = true;
@@ -18,16 +41,11 @@
   };
 
   environment.systemPackages = with pkgs; [
-   # Programming
 
    ## Editor
-   ### TUI
    neovim 
    tree-sitter
-   ### GUI
    vscode
-   zed-editor
-   ## AI
    code-cursor
 
    ## Version-Control
@@ -50,29 +68,16 @@
 
    # kubernetes
    kubectl
-   cri-tools
-   etcd
    kind
 
    ## Support tools
    ripgrep
    fd
    fzf
-   # virtualenv
    pipx
 
-   ## Cloud
-   awscli2
-   google-cloud-sdk
-   azure-cli
-   terraform
-
-   ## NPM Manager
-   nodejs_24
-
    # Browsers
-   brave
-   google-chrome
+   vivaldi
 
    # GPU monitoring
    inxi
@@ -93,21 +98,14 @@
    bat
    htop
    jless
-   mission-center
    stow
    zathura
    imagemagick_light
    gvfs
    polkit_gnome
 
-   mediawriter
-
    #Music
    spotify
-   spicetify-cli
-
-   #Latex
-   texliveFull
 
    # Terminal
    ghostty
@@ -124,8 +122,11 @@
    cachix
    appimage-run
 
-   #privacy
-   bitwarden-desktop
+   #Security
+   caido
+   jadx
+   httptoolkit
+   httptoolkit-server
 
   ];
 

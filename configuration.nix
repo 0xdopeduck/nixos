@@ -8,8 +8,8 @@
   imports =
     [ 
       ./modules/common.nix
-      # ./modules/gnome.nix
-      ./modules/hyprland.nix
+      ./modules/gnome.nix
+      # ./modules/hyprland.nix
       ./modules/font.nix
       ./modules/pkgs.nix
       ./modules/virtualisation.nix
@@ -23,7 +23,6 @@
       ./modules/ssd.nix
       ./modules/swap.nix
       ./modules/zsh.nix
-      ./modules/ghostty.nix
       ./modules/tmux.nix
       ./hosts/asus.nix
       ./hardware-configuration.nix

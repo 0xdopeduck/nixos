@@ -17,7 +17,7 @@
   # services.udev.packages = [ pkgs.android-udev-rules ];
 
   # Enable adb daemon service
-  programs.adb.enable = true;                   
+  # programs.adb.enable = true;                   
 
   # nixpkgs.config.android_sdk.accept_license = true;
 

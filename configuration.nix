@@ -23,7 +23,6 @@
       ./modules/ssd.nix
       ./modules/swap.nix
       ./modules/zsh.nix
-      ./modules/tmux.nix
       ./hosts/asus.nix
       ./hardware-configuration.nix
       ./cachix.nix

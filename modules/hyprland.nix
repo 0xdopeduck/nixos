@@ -29,6 +29,9 @@
     brightnessctl
     wev
     bibata-cursors
+    imagemagick_light
+    gvfs
+    polkit_gnome
     wlsunset
     rofi                        # app launcher
     grim slurp swappy

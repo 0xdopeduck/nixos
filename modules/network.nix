@@ -12,12 +12,14 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   networking.networkmanager.enable = true;
-  # networking.networkmanager.dns = "none";
+  networking.networkmanager.dns = "default";
 
   networking.firewall = {
 	  enable = true;
 	  trustedInterfaces = [ "virbr0" ];
 	};
+  
+  # networking.nftables.enable = false;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 1234 ];

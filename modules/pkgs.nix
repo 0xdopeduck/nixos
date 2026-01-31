@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
 
@@ -52,6 +52,12 @@
    git
    lazygit
 
+   # VM
+   distrobox
+
+   # Video player
+   mpv
+
    ## Compiler & language server
    gcc
    go
@@ -92,8 +98,6 @@
    starship
    zoxide
    ranger
-   lf
-   lsd
    openssl
    bat
    htop
@@ -104,8 +108,26 @@
    gvfs
    polkit_gnome
 
-   #Music
-   spotify
+   #File Manager
+   yazi
+   lf
+   ffmpegthumbnailer
+   ffmpeg
+   poppler-utils
+   highlight
+   mediainfo
+   exiftool
+   lsd
+   pandoc
+   lynx
+   jq
+   ueberzugpp
+   file
+   xdg-utils
+   coreutils
+
+   #Books manager
+   calibre
 
    # Terminal
    ghostty
@@ -127,6 +149,7 @@
    jadx
    httptoolkit
    httptoolkit-server
+   # inputs.burpsuitepro.packages.${system}.default
 
   ];
 

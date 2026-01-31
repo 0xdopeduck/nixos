@@ -88,6 +88,9 @@
   services.gvfs.enable = true;
 
   programs.ssh.startAgent = true;
+  # programs.ssh.enableAskPassword = true;
+  # services.gnome.gnome-keyring.enable = true;
+
 
   # This ensures that screensharing, file pickes, Flatpak does not break
   xdg.portal = {

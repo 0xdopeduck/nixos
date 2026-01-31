@@ -9,7 +9,7 @@
   users.users.oxdopeduck = {
     isNormalUser = true;
     description = "0xdopeduck";
-    extraGroups = [ "networkmanager" "wheel" "libvirt" "kvm" "adbusers" "video" ];
+    extraGroups = [ "power" "networkmanager" "wheel" "libvirt" "kvm" "adbusers" "video" ];
     initialPassword = "changeme";
     createHome = true;
     useDefaultShell = true;

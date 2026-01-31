@@ -4,6 +4,18 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # burpsuitepro = {
+    #   type = "github";
+    #   owner = "xiv3r";
+    #   repo = "Burpsuite-Professional";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {

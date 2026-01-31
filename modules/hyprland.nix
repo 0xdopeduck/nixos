@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   programs.hyprland = {
@@ -9,6 +9,9 @@
   # Required for Wayland compositors
   security.polkit.enable = true;
   services.dbus.enable = true;
+
+  # Required for power management
+  services.upower.enable = true;
 
   services.displayManager.sddm = {
       enable = true;
@@ -22,6 +25,10 @@
       theme = "sddm-astronaut-theme";
   };
 
+  environment.pathsToLink = [
+      "/libexec"
+    ];
+
   environment.systemPackages = with pkgs; [
     waybar                      # status bar
     swaynotificationcenter      # notification
@@ -30,22 +37,22 @@
     wev
     bibata-cursors
     imagemagick_light
-    gvfs
     polkit_gnome
     wlsunset
+    sxiv
     rofi                        # app launcher
     grim slurp swappy
     wl-clipboard                # clipboard
-    hyprpaper                   # wallpaper
+    swww                   # wallpaper
     xdg-desktop-portal-hyprland
     hyprlock
     hypridle
     wf-recorder
     brightnessctl
-    xfce.thunar
-    xfce.thunar-volman
-    xfce.thunar-vcs-plugin
-    xfce.thunar-archive-plugin
+    thunar
+    thunar-volman
+    thunar-vcs-plugin
+    thunar-archive-plugin
     sddm-astronaut
     tokyonight-gtk-theme
     dracula-icon-theme
@@ -53,7 +60,21 @@
     wlogout
     pavucontrol
     blueman
+
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    upower
+    upower-notify
   ];
+
+  xdg.mime.defaultApplications = {
+    "text/html" = "firefox.desktop";
+    "x-scheme-handler/http" = "firefox.desktop";
+    "x-scheme-handler/https" = "firefox.desktop";
+    "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
+    "image/png" = "sxiv.desktop";
+    "image/jpeg" = "sxiv.desktop";
+    "video/mp4" = "mpv.desktop";
+  };
 
   hardware.bluetooth = {
       enable = true;
@@ -61,6 +82,10 @@
   };
 
   services.blueman.enable = true;
+
+  # Required for automount
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
   programs.ssh.startAgent = true;
 

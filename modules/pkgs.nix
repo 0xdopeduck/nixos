@@ -138,6 +138,9 @@
 
    # Office
    libreoffice-still
+   
+   # Notes
+   Obsidian
 
    # NixOS
    appimage-run

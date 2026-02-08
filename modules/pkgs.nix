@@ -45,7 +45,6 @@
    ## Editor
    neovim 
    tree-sitter
-   vscode
    code-cursor
 
    ## Version-Control
@@ -140,7 +139,7 @@
    libreoffice-still
    
    # Notes
-   Obsidian
+   obsidian
 
    # NixOS
    appimage-run

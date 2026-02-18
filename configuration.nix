@@ -17,7 +17,7 @@
       ./modules/users.nix
       ./modules/games.nix
       ./modules/nixos.nix
-      # ./modules/android.nix
+      ./modules/android.nix
       ./modules/amd_pstate.nix
       ./modules/amd_zenpower.nix
       ./modules/ssd.nix

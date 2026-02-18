@@ -19,8 +19,6 @@
 	  trustedInterfaces = [ "virbr0" ];
 	};
   
-  # networking.nftables.enable = false;
-
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 1234 ];
   networking.firewall.allowedUDPPorts = [ 1234 ];

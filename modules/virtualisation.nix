@@ -17,28 +17,37 @@
         dockerCompat = true;
       };
 
-      # waydroid = {
-      #   enable = true;
-      # };
+      waydroid = {
+        enable = true;
+      };
+
+      lxc = {
+        enable = true;
+      };
 
     };
 
   services.dnsmasq.enable = false;
 
 
-  # # Waydroid service
-  #   boot.kernelModules = [
-  #   "binder_linux"
-  #   "ashmem_linux"
-  #   "br_netfilter"
-  # ];
+  # Waydroid service
+    boot.kernelModules = [
+    "binder_linux"
+    "ashmem_linux"
+    "br_netfilter"
+  ];
+
+  networking.firewall.trustedInterfaces = [ "waydroid0" ];
+  networking.nftables.enable = true;
+
+
   #
   # # Enable IP forwarding for container networking
-  #  boot.kernel.sysctl = {
-  #    "net.ipv4.ip_forward" = 1;
-  #    "net.bridge.bridge-nf-call-iptables" = 1;
-  #    "net.bridge.bridge-nf-call-ip6tables" = 1;
-  #  };
+    boot.kernel.sysctl = {
+    "net.ipv4.ip_forward"            = 1;
+    "net.ipv4.conf.all.forwarding"   = 1;
+    "net.ipv6.conf.all.forwarding"   = 1;
+  };
 
   users.users.oxdopeduck = {
     extraGroups = [ "libvirt" "kvm" "libvirtd" "render" ];
@@ -47,9 +56,10 @@
 	environment.systemPackages = [
 	  pkgs.spice-vdagent
 	  pkgs.virglrenderer
-	  # pkgs.waydroid
+	  pkgs.waydroid
       pkgs.iptables
       pkgs.iproute2
+      pkgs.nftables          
 	];
 
 

@@ -66,7 +66,7 @@
    clang-tools
    yaml-language-server
    marksman
-   python3
+   python314
    glibc
    gnumake   
    binutils

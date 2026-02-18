@@ -58,6 +58,7 @@
   # boot.kernelParams = [ "mitigations=off" "quiet" "nvidia-drm.modeset=1" ];
   boot.kernelParams = [ "quiet" "nvidia-drm.modeset=1" ];
 
+
   # Setup Latest opensource Nvidia Drivers
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {

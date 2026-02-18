@@ -24,7 +24,7 @@
   environment.systemPackages = with pkgs; [
 
    # Tools and Packages
-   android-studio
+   # android-studio
    android-tools
 
    #Security
